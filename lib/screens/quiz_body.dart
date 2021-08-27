@@ -32,9 +32,12 @@ class quiz_body extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: kDefaultPadding),
                       child: ProgressBar()),
-                  SizedBox(height: kDefaultPadding,),
+                  SizedBox(
+                    height: kDefaultPadding,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                     child: Obx(
                       () => Text.rich(TextSpan(
                           text:
@@ -45,7 +48,8 @@ class quiz_body extends StatelessWidget {
                               ?.copyWith(color: Colors.lightGreenAccent),
                           children: [
                             TextSpan(
-                                text: "/${_questionController.questions.length}",
+                                text:
+                                    "/${_questionController.questions.length}",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline5
@@ -65,8 +69,7 @@ class quiz_body extends StatelessWidget {
                         controller: _questionController.pageController,
                         itemCount: _questionController.questions.length,
                         itemBuilder: (context, index) => QuestionCard(
-                              question: _questionController.questions[index],
-                            ),
+                              question: _questionController.questions[index],),
                         onPageChanged: _questionController.updateQuestionNum),
                   )
                 ],
